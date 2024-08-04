@@ -49,7 +49,7 @@ employee_list = ["James", "John", "Robert", "Michael", "William", "David", "Rich
 ec2_instances = int(input('How many EC2 instances do you want named? '))
 department = input('What department are you in? ')
 symbols = ('1234567890!@#$%^&*')
-# Generate the EC2 instance names by randomly sampling from the employee list and concatenating with the department
+# Generate the EC2 instance names by randomly sampling from the employee list and concatenating with the department and symbols
 unique_name = [f"{department}-{employee}-{random.sample(symbols,10)}" for employee in random.sample(employee_list, ec2_instances)]
 
 # Print the EC2 instance names
