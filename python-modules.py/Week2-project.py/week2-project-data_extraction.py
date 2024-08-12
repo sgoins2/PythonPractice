@@ -1,6 +1,10 @@
 import os
 
-# Retrieve current working directory
+# Retrieve current
+# 
+# 
+# 
+#  working directory
 current_directory = os.getcwd()
 
 def data_extractor(directory):
