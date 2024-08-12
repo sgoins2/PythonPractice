@@ -1,44 +1,65 @@
+# Example 1: Local vs. Global Variables
 
-input_numbers = [8.2, 3.5, 7.12, 9.16, 10.0, 12.20]
+# Define a function named 'show_truth'
+def show_truth():
+    # Inside the function, a new local variable 'mysterious_var' is created and assigned a value
+    mysterious_var = 'New Surprise!'
+    # Print the local 'mysterious_var' within the function
+    print(mysterious_var)
 
-def get_average(input_numbers):
-    sum = 0.0
-    for numbers in input_numbers:
-        sum += numbers
-        average = sum / len(input_numbers)
-        print(average)
+# Outside the function, create a global variable 'mysterious_var' and assign a value
+mysterious_var = 'Surprise!'
+# Print the global 'mysterious_var'
+print(mysterious_var)
+# Call the 'show_truth' function, which prints the local 'mysterious_var'
+show_truth()
+# Print the global 'mysterious_var' again, which remains unchanged
+print(mysterious_var)
 
+# Hint: Local variables inside functions do not affect global variables outside the function.
 
-##########################################################################
+####################################################
 
-def get_average(input_numbers):
-    sum = 0.0
-    for numbers in input_numbers:
-        sum += numbers
-    average = sum / len(input_numbers)
-    print(average)
+# Example 2: Using the global keyword
 
-get_average([8.2, 3.5, 7.12, 9.16, 10.0, 12.20])
+# Define a function named 'show_truth'
+def show_truth():
+    # Declare 'mysterious_var' as a global variable to modify the global variable inside the function
+    global mysterious_var
+    # Assign a new value to the global variable 'mysterious_var'
+    mysterious_var = 'New Surprise!'
+    # Print the modified global 'mysterious_var'
+    print(mysterious_var)
 
+# Outside the function, create a global variable 'mysterious_var' and assign a value
+mysterious_var = 'Surprise!'
+# Print the global 'mysterious_var'
+print(mysterious_var)
+# Call the 'show_truth' function, which modifies and prints the global 'mysterious_var'
+show_truth()
+# Print the global 'mysterious_var' again, which is now modified by the function
+print(mysterious_var)
 
+# Hint: Using the 'global' keyword allows a function to modify a global variable.
 
-##########################################################################
+####################################################
 
+# Example 3: Modifying a mutable global variable
 
-def print_letter_count(text, letter):
-    counter = 0
-    for char in text:
-        if char == letter:
-            counter += 1
-    print('Number of', letter, 'is', counter )  
+# Define a function named 'show_truth'
+def show_truth():
+    # Append a new value to the global list 'mysterious_var'
+    mysterious_var.append('New Surprise!')
+    # Print the modified global list 'mysterious_var'
+    print(mysterious_var)
 
-print_letter_count('Welcome', 'e')        
+# Outside the function, create a global list 'mysterious_var' and assign initial values
+mysterious_var = ['Surprise!']
+# Print the global list 'mysterious_var'
+print(mysterious_var)
+# Call the 'show_truth' function, which modifies and prints the global list 'mysterious_var'
+show_truth()
+# Print the global list 'mysterious_var' again, which is now modified by the function
+print(mysterious_var)
 
-print_letter_count('People say nothing is impossible, but I do nothing everyday', 'e')
-
-print_letter_count('e', 'Welcome')
-
-print_letter_count(text='Welcome', letter='e')
-
-##########################################################################
-
+# Hint: Modifying a mutable global variable (like a list) inside a function affects the variable outside the function.
